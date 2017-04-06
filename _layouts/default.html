@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Op z'n Hagevelds</title>
+      <script src="{{ site.url }}/js/jquery.min.js"></script>
+      <script src="{{ site.url }}/js/semantic.min.js"></script>
+      <script src="{{ site.url }}/js/script.js"></script>
+      <link rel="stylesheet" href="{{ site.url }}/css/semantic.min.css">
+      <link rel="stylesheet" href="{{ site.url }}/css/style.css">
+      <link rel="shortcut icon" type="image/x-icon" href="{{ site.url }}/img/favicon.png">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <div class="ui fixed inverted menu">
+         <div class="ui container">
+            <a href="{{ site.url }}" class="header item">
+            <img class="logo" src="{{ site.url }}/img/favicon.png">
+            Op z'n Hagevelds
+            </a>
+            <div class="desktop">
+               <a href="#" class="item">Home</a>
+               <div class="ui simple dropdown item">
+                  Archief <i class="dropdown icon"></i>
+                  <div class="menu">
+                     <a class="item" href="#">Link Item</a>
+                     <a class="item" href="#">Link Item</a>
+                     <div class="divider"></div>
+                     <div class="header">Header Item</div>
+                     <div class="item">
+                        <i class="dropdown icon"></i>
+                        Sub Menu
+                        <div class="menu">
+                           <a class="item" href="#">Link Item</a>
+                           <a class="item" href="#">Link Item</a>
+                        </div>
+                     </div>
+                     <a class="item" href="#">Link Item</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      {{ content }}
+      <div class="ui inverted vertical footer segment">
+         <div class="ui center aligned container footer">
+            <img src="{{ site.url }}/img/hageveld-footer.png" class="ui centered image">
+         </div>
+      </div>
+   </body>
+</html>
