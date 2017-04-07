@@ -5,7 +5,7 @@ layout: default
    {% for post in site.posts %}
    <article>
       <h3>{{ post.titel }}</h3>
-      <h6>Geschreven door <a href=" {{ post.auteur_link }}">{{ post.auteur }}</a> op {{ post.datum | date_to_string }}.</h6>
+      <h6>Geschreven door <a href=" {{ post.auteur_link }}">{{ post.auteur }}</a> op {{ post.datum | date_to_string }}</h6>
       {{ post.content | split: '<LeesMeer>' | first }}
       <a href="{{ post.url }}">Lees meer<i class="angle right icon"></i></a>
    </article>

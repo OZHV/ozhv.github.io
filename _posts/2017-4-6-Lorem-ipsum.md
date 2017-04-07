@@ -1,6 +1,8 @@
 ---
 layout: post
 titel: Lorem Ipsum
+categorie: test
+tags: informatie, hageveld, test
 auteur: Wille Straathof
 auteur_link: http://hageveld.nl
 datum: 06-04-2017

@@ -1,6 +1,8 @@
 ---
 layout: post
 titel: College Hageveld
+categorie: info
+tags: informatie, hageveld
 auteur: Wille Straathof
 auteur_link: http://hageveld.nl
 datum: 06-04-2016

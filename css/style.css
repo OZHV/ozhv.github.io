@@ -42,6 +42,13 @@ h6 {
     margin-bottom: 5px;
     margin-top: 10px;
 }
+h2 {
+	color: red;
+	text-align: center;
+}
+#results-container {
+	display: none;
+}
 /* Mobile part */
 
 .ui.centered.image.mobile,
