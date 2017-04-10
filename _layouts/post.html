@@ -6,11 +6,11 @@ layout: default
    <article>
       <h1>{{ page.titel }}</h1>
       <h6>Geschreven door <a target="_blank" href="{{ page.auteur_link }}">{{ page.auteur }}</a> op {{ page.datum | date_to_string }}</h6>
-	  <a href="whatsapp://send?text=Lees+nu+%27{{ page.titel | uri_escape }}%27+op+{{ site.url }}{{ page.url }}"><i class="whatsapp icon"></i></a>
-	  <a href="mailto:?subject={{ page.titel | uri_escape }}&body=Lees+nu+%27{{ page.titel | uri_escape }}%27+op+{{ site.url }}{{ page.url }}!"><i class="mail icon"></i></a>
-	  <a href="https://plus.google.com/share?hl=nl&url={{ site.url }}{{ page.url }}&title={{ page.titel | uri_escape }}"><i class="google plus icon"></i></a>
-	  <a href="http://twitter.com/share?text=Lees+nu+%27{{ page.titel | uri_escape }}%27+op&url={{ site.url }}{{ page.url }}"><i class="twitter icon"></i></a>
-	  <a href="http://www.facebook.com/sharer.php?u={{ site.url }}{{ page.url }}&title={{ page.titel | uri_escape }}"><i class="facebook icon"></i></a><BR><BR>
+	  <a href="whatsapp://send?text=Lees+nu+%27{{ page.titel | uri_escape }}%27+op+{{ site.url }}{{ page.url }}"><button class="tiny ui green button"><i class="whatsapp icon"></i> Stuur door</button></a>
+	  <a href="mailto:?subject={{ page.titel | uri_escape }}&body=Lees+nu+%27{{ page.titel | uri_escape }}%27+op+{{ site.url }}{{ page.url }}!"><button class="tiny ui orange button"><i class="mail icon"></i> Mail</button></a>
+	  <a href="https://plus.google.com/share?hl=nl&url={{ site.url }}{{ page.url }}&title={{ page.titel | uri_escape }}"><button class="tiny ui google plus button"><i class="google plus icon"></i> Post</button></a>
+	  <a href="http://twitter.com/share?text=Lees+nu+%27{{ page.titel | uri_escape }}%27+op&url={{ site.url }}{{ page.url }}"><button class="tiny ui twitter button"><i class="twitter icon"></i>Tweet</button></a>
+	  <a href="http://www.facebook.com/sharer.php?u={{ site.url }}{{ page.url }}&title={{ page.titel | uri_escape }}"><button class="tiny ui facebook button"><i class="facebook icon"></i>Deel</button></a><BR><BR>
       {{ page.content }}
    </article>
 </div>
