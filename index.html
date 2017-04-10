@@ -1,13 +1,15 @@
 ---
 layout: default
+title: Op z'n Hagevelds
 ---
-<div class="ui main text container">
+<div class="ui main text container" itemscope="" itemtype="http://schema.org/WebSite">
    {% for post in site.posts %}
-   <article>
-      <h3>{{ post.titel }}</h3>
+   <article itemscope="" itemtype="http://schema.org/Article">
+      <h3 itemprop="name">{{ post.titel }}</h3>
       <h6>Geschreven door <a href=" {{ post.auteur_link }}">{{ post.auteur }}</a> op {{ post.datum | date_to_string }}</h6>
-      {{ post.content | split: '<LeesMeer>' | first }}
-      <a href="{{ post.url }}">Lees meer<i class="angle right icon"></i></a>
+      <meta itemprop="keywords" content="{{ post.tags | join: ', ' }}">
+	  <div itemprop="description">{{ post.content | split: '<LeesMeer>' | first }}</div>
+      <a itemprop="url" href="{{ post.url }}">Lees meer<i class="angle right icon"></i></a>
    </article>
    <div class="ui divider"></div>
    {% endfor %}
