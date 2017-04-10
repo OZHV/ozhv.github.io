@@ -5,7 +5,7 @@ layout: default
    <a class="terug" href="{{ site.url }}"><i class="arrow left icon"></i>Terug</a>
    <article class="post" itemscope="" itemtype="http://schema.org/Article">
       <meta itemprop="keywords" content="{{ page.tags }}" />
-      <meta itemprop="description" content="{{ page.content | split: '<LeesMeer>' | first | strip_html }}" />
+      <meta itemprop="description" content="{{ page.content | split: '[Lees Meer]' | first | markdownify | strip_html }}" />
       <h1 itemprop="name">{{ page.titel }}</h1>
       <h6>
          Geschreven door 
@@ -37,7 +37,7 @@ layout: default
       <a href="http://twitter.com/share?text=Lees+%27{{ page.titel | uri_escape }}%27+op&url={{ site.url }}{{ page.url }}&hashtags=opznhagevelds,hageveld"><button class="tiny ui twitter button"><i class="twitter icon"></i>Tweet</button></a>
       <a href="http://www.facebook.com/sharer.php?u={{ site.url }}{{ page.url }}&title={{ page.titel | uri_escape }}"><button class="tiny ui facebook button"><i class="facebook icon"></i>Deel</button></a><BR><BR>
       <div class="entry" itemprop="articleBody">
-         {{ page.content }}
+         {{ page.content | replace: '[Lees Meer]', '' | markdownify | smartify }}
       </div>
    </article>
 </div>

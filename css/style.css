@@ -4,21 +4,28 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
-.archief,
-.agenda {
-    margin-bottom: 30px;
-}
-.ui.icon.input {
-    display: none;
-}
 section {
     margin-left: 30px;
+}
+h2 {
+    color: red;
+    text-align: center;
+}
+h6 {
+    margin-bottom: 10px;
+    margin-top: 5px;
 }
 ul.ui.list {
     margin-left: 40px;
 }
 article.post {
     margin-top: -25px;
+}
+.archief,.agenda {
+    margin-bottom: 30px;
+}
+.ui.icon.input {
+    display: none;
 }
 .desc {
     margin-bottom: 10px;
@@ -29,10 +36,7 @@ article.post {
 .ui.menu .item img.logo {
     margin-right: 1.5em;
 }
-.verzonden {
-    display: none;
-}
-.taglist {
+.verzonden,.taglist,#results-container {
     display: none;
 }
 .success {
@@ -53,8 +57,7 @@ article.post {
     padding-bottom: 0;
     padding-top: 2em;
 }
-.ui.inverted.segment,
-.ui.inverted.menu {
+.ui.inverted.segment,.ui.inverted.menu {
     background: #FA9B3D;
 }
 .ui.main {
@@ -73,34 +76,20 @@ article.post {
 .ui.main.text.container.post {
     margin-top: -2em;
 }
-h6 {
-    margin-bottom: 10px;
-    margin-top: 5px;
-}
-h2 {
-    color: red;
-    text-align: center;
-}
-#results-container {
-    display: none;
-}
-/* Mobile part */
 
-.ui.centered.image.mobile,
-.mobile {
+/* CSS voor mobiele gebruikers */
+
+.ui.centered.image.mobile,.mobile {
     display: none;
 }
-.ui.centered.image.desktop,
-.desktop {
+.ui.centered.image.desktop,.desktop {
     display: flex;
 }
 @media (max-width: 500px) {
-    .ui.centered.image.mobile,
-    .mobile {
+    .ui.centered.image.mobile,.mobile {
         display: block;
     }
-    .ui.centered.image.desktop,
-    .desktop {
+    .ui.centered.image.desktop,.desktop {
         display: none;
     }
     .header.item {

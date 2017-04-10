@@ -27,7 +27,7 @@ title: Op z'n Hagevelds
       </h6>
       <meta itemprop="keywords" content="{{ page.tags }}" />
       <div class="desc" itemprop="description">
-         {{ post.content | split: '<LeesMeer>' | first }}
+         {{ post.content | split: '[Lees Meer]' | first | markdownify | smartify }}
       </div>
       <a class="leesmeer" itemprop="url" href="{{ post.url }}">Lees meer<i class="angle right icon"></i></a>
    </article>

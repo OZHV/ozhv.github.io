@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Op z'n Hagevelds</title>
-    <script src="{{ site.url }}/js/jquery.min.js"></script>
-    <script src="{{ site.url }}/js/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js" integrity="sha256-97Q90i72uoJfYtVnO2lQcLjbjBySZjLHx50DYhCBuJo=" crossorigin="anonymous"></script>
     <script src="{{ site.url }}/js/script.js"></script>
-    <link rel="stylesheet" href="{{ site.url }}/css/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" integrity="sha256-5+W3JHnvGYIJkVxUBsw+jBi9+pOlu9enPX3vZapXj5M=" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{ site.url }}/css/style.css">
     <link rel="shortcut icon" type="image/x-icon" href="{{ site.url }}/img/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +16,6 @@
     <meta name="language" content="NL">
     {% feed_meta %}
 </head>
-
 <body>
     <div class="ui fixed inverted menu">
         <div class="ui container">
@@ -42,12 +40,14 @@
         </div>
     </div>
     <ul id="results-container"></ul>
-
-
     {{ content }}
-    <script src="{{ site.url }}/js/jekyll-search.js" type="text/javascript"></script>
-
-
+    <div class="ui inverted vertical footer segment">
+        <div class="ui center aligned container footer">
+            <img src="{{ site.url }}/img/hageveld-footer.png" class="ui centered image desktop">
+            <img src="{{ site.url }}/img/hageveld-footer-mobile.png" class="ui centered image mobile">
+        </div>
+    </div>
+	<script src="{{ site.url }}/js/jekyll-search.js" type="text/javascript"></script>
     <script type="text/javascript">
         SimpleJekyllSearch({
             searchInput: document.getElementById('search-input'),
@@ -65,16 +65,8 @@
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
         ga('create', 'UA-97131551-1', 'auto');
         ga('send', 'pageview');
     </script>
-    <div class="ui inverted vertical footer segment">
-        <div class="ui center aligned container footer">
-            <img src="{{ site.url }}/img/hageveld-footer.png" class="ui centered image desktop">
-            <img src="{{ site.url }}/img/hageveld-footer-mobile.png" class="ui centered image mobile">
-        </div>
-    </div>
 </body>
-
 </html>
