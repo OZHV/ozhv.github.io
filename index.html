@@ -6,7 +6,25 @@ title: Op z'n Hagevelds
    {% for post in site.posts %}
    <article itemscope="" itemtype="http://schema.org/Article">
       <h3 itemprop="name">{{ post.titel }}</h3>
-      <h6>Geschreven door <a href=" {{ post.auteur_link }}">{{ post.auteur }}</a> op {{ post.datum | date_to_string }}</h6>
+      <h6>Geschreven door <a href=" {{ post.auteur_link }}">{{ post.auteur }}</a> op 
+         {% assign m = post.datum | date: "%-m" %}
+         {{ post.datum | date: "%-d" }}
+         {% case m %}
+         {% when '1' %}januari
+         {% when '2' %}februari
+         {% when '3' %}maart
+         {% when '4' %}april
+         {% when '5' %}mei
+         {% when '6' %}juni
+         {% when '7' %}juli
+         {% when '8' %}augustus
+         {% when '9' %}september
+         {% when '10' %}oktober
+         {% when '11' %}november
+         {% when '12' %}december
+         {% endcase %}
+         {{ post.datum | date: "%Y" }}
+      </h6>
       <meta itemprop="keywords" content="{{ page.tags }}" />
       <div class="desc" itemprop="description">
          {{ post.content | split: '<LeesMeer>' | first }}

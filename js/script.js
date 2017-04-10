@@ -1,3 +1,5 @@
+---
+---
 $(document).ready(function() {
     var globalhtml = $(".ui.main.text.container").html();
     var firsttime = true;

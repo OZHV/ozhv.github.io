@@ -13,7 +13,24 @@ permalink: /archief/
       <ul class="ui list">
          {% assign myDate = currentDate %}
          {% endif %}
-         <li><a href="{{ post.url }}"><span>{{ post.datum | date: "%B %-d, %Y" }}</span> - {{ post.title }}</a></li>
+         <li><a href="{{ post.url }}"><span>{% assign m = post.datum | date: "%-m" %}
+            {{ post.datum | date: "%-d" }}
+         {% case m %}
+         {% when '1' %}januari
+         {% when '2' %}februari
+         {% when '3' %}maart
+         {% when '4' %}april
+         {% when '5' %}mei
+         {% when '6' %}juni
+         {% when '7' %}juli
+         {% when '8' %}augustus
+         {% when '9' %}september
+         {% when '10' %}oktober
+         {% when '11' %}november
+         {% when '12' %}december
+            {% endcase %}
+            {{ post.datum | date: "%Y" }}</span> - {{ post.title }}</a>
+         </li>
          {% if forloop.last %}
       </ul>
       {% endif %}
