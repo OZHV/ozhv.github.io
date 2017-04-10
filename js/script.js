@@ -13,4 +13,13 @@ $("#search-input").on("input",function() {
 		$(".ui.main.text.container").html(globalhtml);
 	}
 });
+
+$("#verzenden").click(function() {
+	$.get( "https://luithollander.nl/ozhv.php?naam=" + encodeURIComponent($("#naam").val()) + "&email=" + encodeURIComponent($("#email").val()) + "&bericht=" + encodeURIComponent($("#bericht").val()) + "");
+	$("form").fadeOut(500);
+	$(".verzonden").fadeIn(500);
+});
+$("form").submit(function(e){
+        e.preventDefault();
+    });
 });

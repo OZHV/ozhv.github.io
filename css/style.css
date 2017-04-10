@@ -7,6 +7,16 @@ body {
 .ui.menu .item img.logo {
     margin-right: 1.5em;
 }
+.verzonden {
+	display: none;
+}
+.success {
+	color: #016936;
+	font-weight: bold;
+}
+.contact {
+	margin-bottom: 40px;
+}
 .main.container {
     padding-top: 7em;
 }
