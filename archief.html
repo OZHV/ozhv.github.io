@@ -1,0 +1,22 @@
+---
+layout: default
+permalink: /archief/
+---
+<div class="ui main text container">
+   <h1 class="archief">Archief</h1>
+   <section>
+      {% for post in site.posts %}
+      {% assign currentDate = post.datum | date: "%B %Y" %}
+      {% if currentDate != myDate %}
+      {% unless forloop.first %}</ul>{% endunless %}
+      <h3>{{ currentDate }}</h3>
+      <ul class="ui list">
+         {% assign myDate = currentDate %}
+         {% endif %}
+         <li><a href="{{ post.url }}"><span>{{ post.datum | date: "%B %-d, %Y" }}</span> - {{ post.title }}</a></li>
+         {% if forloop.last %}
+      </ul>
+      {% endif %}
+      {% endfor %}
+   </section>
+</div>

@@ -3,24 +3,24 @@ layout: default
 permalink: /contact/
 ---
 <div class="ui main text container">
-<h1 class="contact">Neem contact op</h1>
-<form id="contact" class="ui form">
-  <div class="field">
-    <label>Naam</label>
-    <input type="text" id="naam" placeholder="Naam">
-  </div>
-  <div class="field">
-    <label>E-mailadres</label>
-    <input type="text" id="email" placeholder="E-mailadres">
-  </div>
-<div class="field">
-    <label>Bericht</label>
-    <textarea rows="5" id="bericht" placeholder="Bericht"></textarea>
-  </div>
-  <button id="verzenden" class="ui button" type="submit">Verzenden</button>
-</form>
-<div class="verzonden">
-<p class="success">Je bericht is verzonden!</p>
-<a href="{{ site.url }}">Klik hier om terug te keren naar de startpagina.</a>
-</div>
+   <h1 class="contact">Neem contact op</h1>
+   <form id="contact" class="ui form">
+      <div class="field">
+         <label>Naam</label>
+         <input type="text" id="naam" placeholder="Naam">
+      </div>
+      <div class="field">
+         <label>E-mailadres</label>
+         <input type="text" id="email" placeholder="E-mailadres">
+      </div>
+      <div class="field">
+         <label>Bericht</label>
+         <textarea rows="5" id="bericht" placeholder="Bericht"></textarea>
+      </div>
+      <button id="verzenden" class="ui button" type="submit"><i class="send icon"></i>Verzenden</button>
+   </form>
+   <div class="verzonden">
+      <p class="success">Je bericht is verzonden!</p>
+      <a href="{{ site.url }}">Klik hier om terug te keren naar de startpagina.</a>
+   </div>
 </div>

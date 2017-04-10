@@ -2,16 +2,11 @@
 layout: default
 ---
 <div class="ui main text container post">
-   <a href="{{ site.url }}"><i class="arrow left icon"></i></i>Terug</a>
+   <a class="terug" href="{{ site.url }}"><i class="arrow left icon"></i>Terug</a>
    <article class="post" itemscope="" itemtype="http://schema.org/Article">
-      <meta itemprop="keywords" content="{{ page.tags | join: ', ' }}" />
+      <meta itemprop="keywords" content="{{ page.tags }}" />
       <meta itemprop="description" content="{{ page.content | split: '<LeesMeer>' | first | strip_html }}" />
       <h1 itemprop="name">{{ page.titel }}</h1>
-      <ul class="taglist">
-         {% for tag in page.tags %}
-         <li class="tag">{{ tag }}</li>
-         {% endfor %}
-      </ul>
       <h6>
          Geschreven door 
          <a target="_blank" href="{{ page.auteur_link }}">
