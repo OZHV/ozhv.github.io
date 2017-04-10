@@ -2,42 +2,17 @@
 layout: default
 ---
 <div class="ui main text container post">
-   <a class="terug" href="{{ site.url }}"><i class="arrow left icon"></i>Terug</a>
-   <article class="post" itemscope="" itemtype="http://schema.org/Article">
-      <meta itemprop="keywords" content="{{ page.tags }}" />
-      <meta itemprop="description" content="{{ page.content | split: '[Lees Meer]' | first | markdownify | strip_html }}" />
-      <h1 itemprop="name">{{ page.titel }}</h1>
-      <h6>
-         Geschreven door 
-         <a target="_blank" href="{{ page.auteur_link }}">
-            <meta itemprop="author">
-            {{ page.auteur }}</meta>
-         </a>
-         op <time class="published" itemprop="datePublished" datetime="{{ page.datum | date: '%Y-%m-%d' }}">{% assign m = page.datum | date: "%-m" %}
-         {{ page.datum | date: "%-d" }}
-         {% case m %}
-         {% when '1' %}januari
-         {% when '2' %}februari
-         {% when '3' %}maart
-         {% when '4' %}april
-         {% when '5' %}mei
-         {% when '6' %}juni
-         {% when '7' %}juli
-         {% when '8' %}augustus
-         {% when '9' %}september
-         {% when '10' %}oktober
-         {% when '11' %}november
-         {% when '12' %}december
-         {% endcase %}
-         {{ page.datum | date: "%Y" }}</time>
-      </h6>
-      <a href="whatsapp://send?text=Lees+%27{{ page.titel | uri_escape }}%27+op+{{ site.url }}{{ page.url }}"><button class="tiny ui green button"><i class="whatsapp icon"></i> Stuur door</button></a>
-      <a href="mailto:?subject={{ page.titel | uri_escape }}&body=Lees+%27{{ page.titel | uri_escape }}%27+op+{{ site.url }}{{ page.url }}."><button class="tiny ui orange button"><i class="mail icon"></i> Mail</button></a>
-      <a href="https://plus.google.com/share?hl=nl&url={{ site.url }}{{ page.url }}&title={{ page.titel | uri_escape }}"><button class="tiny ui google plus button"><i class="google plus icon"></i> Post</button></a>
-      <a href="http://twitter.com/share?text=Lees+%27{{ page.titel | uri_escape }}%27+op&url={{ site.url }}{{ page.url }}&hashtags=opznhagevelds,hageveld"><button class="tiny ui twitter button"><i class="twitter icon"></i>Tweet</button></a>
-      <a href="http://www.facebook.com/sharer.php?u={{ site.url }}{{ page.url }}&title={{ page.titel | uri_escape }}"><button class="tiny ui facebook button"><i class="facebook icon"></i>Deel</button></a><BR><BR>
-      <div class="entry" itemprop="articleBody">
-         {{ page.content | replace: '[Lees Meer]', '' | markdownify | smartify }}
-      </div>
-   </article>
+    <a class="terug" href="{{ site.url }}"><i class="arrow left icon"></i>Terug</a>
+    <article class="post" itemscope="" itemtype="http://schema.org/Article">
+        <meta itemprop="keywords" content="{{ page.tags }}" />
+        <meta itemprop="description" content="{{ page.content | split: '[Lees Meer]' | first | markdownify | strip_html }}" />
+        <h1 itemprop="name">{{ page.titel }}</h1>
+        <h6>Geschreven door <a target="_blank" href="{{ page.auteur_link }}"><meta itemprop="author">{{ page.auteur }}</meta></a> op <time class="published" itemprop="datePublished" datetime="{{ page.datum | date: '%Y-%m-%d' }}">{% assign m = post.datum | date: "%-m" %}{{ post.datum | date: "%-d " }}{% case m %}{% when '1' %}januari{% when '2' %}februari{% when '3' %}maart{% when '4' %}april{% when '5' %}mei{% when '6' %}juni{% when '7' %}juli{% when '8' %}augustus{% when '9' %}september{% when '10' %}oktober{% when '11' %}november{% when '12' %}december{% endcase %}{{ post.datum | date: " %Y" }}</time></h6>
+        <a href="whatsapp://send?text=Lees+%27{{ page.titel | uri_escape }}%27+op+{{ site.url }}{{ page.url }}"><button class="tiny ui green button"><i class="whatsapp icon"></i> Stuur door</button></a>
+        <a href="mailto:?subject={{ page.titel | uri_escape }}&body=Lees+%27{{ page.titel | uri_escape }}%27+op+{{ site.url }}{{ page.url }}."><button class="tiny ui orange button"><i class="mail icon"></i> Mail</button></a>
+        <a href="https://plus.google.com/share?hl=nl&url={{ site.url }}{{ page.url }}&title={{ page.titel | uri_escape }}"><button class="tiny ui google plus button"><i class="google plus icon"></i> Post</button></a>
+        <a href="http://twitter.com/share?text=Lees+%27{{ page.titel | uri_escape }}%27+op&url={{ site.url }}{{ page.url }}&hashtags=opznhagevelds,hageveld"><button class="tiny ui twitter button"><i class="twitter icon"></i>Tweet</button></a>
+        <a href="http://www.facebook.com/sharer.php?u={{ site.url }}{{ page.url }}&title={{ page.titel | uri_escape }}"><button class="tiny ui facebook button"><i class="facebook icon"></i>Deel</button></a><BR><BR>
+        <div class="entry" itemprop="articleBody">{{ page.content | replace: '[Lees Meer]', '' | markdownify | smartify }}</div>
+    </article>
 </div>

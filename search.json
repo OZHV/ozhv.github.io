@@ -1,17 +1,16 @@
 ---
-layout: null
 ---
 [
   {% for post in site.posts %}
     {
       "titel"       : "{{ post.titel | escape }}",
       "categorie"   : "{{ post.categorie }}",
-	  "content"     : "{{ post.content | strip_newlines | split: '<LeesMeer>' | first }}",
-      "tags"        : "{{ post.tags | array_to_sentence_string }}",
-      "url"         : "{{ site.baseurl }}{{ post.url }}",
-      "datum"       : "{{ post.datum | date_to_string }}",
-	  "auteur"      : "{{ post.auteur }}",
-	  "auteur_link" : "{{ post.auteur_link }}"
+      "content"     : "{{ post.content | strip_newlines | split: '[Lees Meer]' | first }}",
+      "tags"        : "{{ post.tags }}",
+      "url"         : "{{ site.url }}{{ post.url }}",
+      "datum"       : "{% assign m = post.datum | date: "%-m" %}{{ post.datum | date: "%-d " }}{% case m %}{% when '1' %}januari{% when '2' %}februari{% when '3' %}maart{% when '4' %}april{% when '5' %}mei{% when '6' %}juni{% when '7' %}juli{% when '8' %}augustus{% when '9' %}september{% when '10' %}oktober{% when '11' %}november{% when '12' %}december{% endcase %}{{ post.datum | date: " %Y" }}",
+      "auteur"      : "{{ post.auteur }}",
+      "auteur_link" : "{{ post.auteur_link }}"
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]

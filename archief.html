@@ -3,37 +3,20 @@ layout: default
 permalink: /archief/
 ---
 <div class="ui main text container">
-   <h1 class="archief">Archief</h1>
-   <section>
-      {% for post in site.posts %}
-      {% assign currentDate = post.datum | date: "%B %Y" %}
-      {% if currentDate != myDate %}
-      {% unless forloop.first %}</ul>{% endunless %}
-      <h3>{{ currentDate }}</h3>
-      <ul class="ui list">
-         {% assign myDate = currentDate %}
-         {% endif %}
-         <li><a href="{{ post.url }}"><span>{% assign m = post.datum | date: "%-m" %}
-            {{ post.datum | date: "%-d" }}
-         {% case m %}
-         {% when '1' %}januari
-         {% when '2' %}februari
-         {% when '3' %}maart
-         {% when '4' %}april
-         {% when '5' %}mei
-         {% when '6' %}juni
-         {% when '7' %}juli
-         {% when '8' %}augustus
-         {% when '9' %}september
-         {% when '10' %}oktober
-         {% when '11' %}november
-         {% when '12' %}december
-            {% endcase %}
-            {{ post.datum | date: "%Y" }}</span> - {{ post.title }}</a>
-         </li>
-         {% if forloop.last %}
-      </ul>
-      {% endif %}
-      {% endfor %}
-   </section>
+    <h1 class="archief">Archief</h1>
+    <section>
+        {% for post in site.posts %}
+        {% assign currentDate = post.datum | date: "%B %Y" %}
+        {% if currentDate != myDate %}
+        {% unless forloop.first %}</ul>{% endunless %}
+        <h3>{{ currentDate }}</h3>
+        <ul class="ui list">
+            {% assign myDate = currentDate %}
+            {% endif %}
+            <li><a href="{{ post.url }}"><span>{% assign m = post.datum | date: "%-m" %}{{ post.datum | date: "%-d " }}{% case m %}{% when '1' %}januari{% when '2' %}februari{% when '3' %}maart{% when '4' %}april{% when '5' %}mei{% when '6' %}juni{% when '7' %}juli{% when '8' %}augustus{% when '9' %}september{% when '10' %}oktober{% when '11' %}november{% when '12' %}december{% endcase %}{{ post.datum | date: " %Y" }}</span> - {{ post.title }}</a></li>
+            {% if forloop.last %}
+        </ul>
+        {% endif %}
+        {% endfor %}
+    </section>
 </div>

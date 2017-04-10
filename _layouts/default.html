@@ -47,17 +47,16 @@
             <img src="{{ site.url }}/img/hageveld-footer-mobile.png" class="ui centered image mobile">
         </div>
     </div>
-	<script src="{{ site.url }}/js/jekyll-search.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-jekyll-search/1.1.8/jekyll-search.min.js" integrity="sha256-YHAdSiDznyIEAhUYsPerIh6qoIktpxz9zJ47AtrFFGs=" crossorigin="anonymous"></script>
     <script type="text/javascript">
         SimpleJekyllSearch({
             searchInput: document.getElementById('search-input'),
             resultsContainer: document.getElementById('results-container'),
-            json: '{{ site.baseurl }}/search.json',
+            json: '{{ site.url }}/search.json',
             searchResultTemplate: '<article><h3>{titel}</h3><h6>Geschreven door <a href="{auteur_link}">{auteur}</a> op {datum}</h6><div class="desc">{content}</div><a class="leesmeer" href="{url}">Lees meer<i class="angle right icon"></i></a></article><div class="ui divider"></div>',
             noResultsText: '<h2>Geen resultaten gevonden</h2>',
             limit: 10,
-            fuzzy: false,
-            exclude: ['Helemaal_niks']
+            fuzzy: false
         })
     </script>
     <script type="text/javascript">
