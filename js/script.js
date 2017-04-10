@@ -31,4 +31,7 @@ $(document).ready(function() {
 	else {
 		$(".right.menu").remove();
 	}
+	if($(".desktop").css("display") == "none") {
+		$(".right.menu").remove();
+	}
 });

@@ -95,8 +95,8 @@ article.post {
     .header.item {
         margin: 0 auto !important;
     }
-    .main.container {
-        padding-top: 4.5em;
+    .main.text.container {
+        padding-top: 5.5em;
     }
     .main.container.text.container.post {
         padding-top: 7em;
