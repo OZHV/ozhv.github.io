@@ -1,71 +1,82 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Op z'n Hagevelds</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js" integrity="sha256-97Q90i72uoJfYtVnO2lQcLjbjBySZjLHx50DYhCBuJo=" crossorigin="anonymous"></script>
-    <script src="{{ site.url }}/js/script.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" integrity="sha256-5+W3JHnvGYIJkVxUBsw+jBi9+pOlu9enPX3vZapXj5M=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ site.url }}/css/style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ site.url }}/img/favicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Op z'n Hagevelds">
-    <meta name="keywords" content="hageveld, op zn hagevelds, op z'n hagevelds, krant, tijdschrift, artikel, heemstede, school, 200 jaar hageveld, 200, jaar">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="revisit-after" content="1 day">
-    <meta name="language" content="NL">
-    {% feed_meta %}
-</head>
-<body>
-    <div class="ui fixed inverted menu">
-        <div class="ui container">
+   <head>
+      <title>Op z'n Hagevelds</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js" integrity="sha256-97Q90i72uoJfYtVnO2lQcLjbjBySZjLHx50DYhCBuJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-jekyll-search/1.1.8/jekyll-search.min.js" integrity="sha256-YHAdSiDznyIEAhUYsPerIh6qoIktpxz9zJ47AtrFFGs=" crossorigin="anonymous"></script>
+      <script src="{{ site.url }}/js/script.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" integrity="sha256-5+W3JHnvGYIJkVxUBsw+jBi9+pOlu9enPX3vZapXj5M=" crossorigin="anonymous" />
+      <link rel="stylesheet" href="{{ site.url }}/css/style.css">
+      <link rel="shortcut icon" type="image/x-icon" href="{{ site.url }}/img/favicon.png">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Op z'n Hagevelds">
+      <meta name="keywords" content="hageveld, op zn hagevelds, op z'n hagevelds, krant, tijdschrift, artikel, heemstede, school, 200 jaar hageveld, 200, jaar">
+      <meta name="robots" content="noindex, nofollow">
+      <meta name="revisit-after" content="1 day">
+      <meta name="language" content="NL">
+      {% feed_meta %}
+   </head>
+   <body>
+      <div class="ui fixed inverted menu">
+         <div class="ui container">
+            <div class="mobile">
+               <div class="ui pointing dropdown link item">
+                  <i class="sidebar icon"></i>
+                  <div class="menu">
+                     <a href="{{ site.url }}" class="item">Artikelen</a>
+                     <a href="/archief/" class="item">Archief</a>
+                     <a href="/agenda/" class="item">Agenda</a>
+                     <a href="/contact/" class="item">Contact</a>
+                  </div>
+               </div>
+            </div>
             <a href="{{ site.url }}" class="header item">
-                <img class="logo" src="{{ site.url }}/img/favicon.png"> Op z'n Hagevelds
+            <img class="logo" alt="" src="{{ site.url }}/img/favicon.png"> Op z'n Hagevelds
             </a>
             <div class="desktop">
-                <a href="/archief/" class="item">Archief</a>
-                <a href="/agenda/" class="item">Agenda</a>
-                <a href="/contact/" class="item">Contact</a>
+               <a href="/archief/" class="item">Archief</a>
+               <a href="/agenda/" class="item">Agenda</a>
+               <a href="/contact/" class="item">Contact</a>
             </div>
             <div class="right menu">
-                <div class="item">
-                    <div class="desktop">
-                        <div class="ui icon input">
-                            <input type="text" id="search-input" placeholder="Zoek...">
-                            <i class="search link icon"></i>
-                        </div>
-                    </div>
-                </div>
+               <div class="item">
+                  <div class="desktop">
+                     <div class="ui icon input">
+                        <input type="text" id="search-input" placeholder="Zoek...">
+                        <i class="search link icon"></i>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-    </div>
-    <ul id="results-container"></ul>
-    {{ content }}
-    <div class="ui inverted vertical footer segment">
-        <div class="ui center aligned container footer">
-            <img src="{{ site.url }}/img/hageveld-footer.png" class="ui centered image desktop">
-            <img src="{{ site.url }}/img/hageveld-footer-mobile.png" class="ui centered image mobile">
-        </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-jekyll-search/1.1.8/jekyll-search.min.js" integrity="sha256-YHAdSiDznyIEAhUYsPerIh6qoIktpxz9zJ47AtrFFGs=" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        SimpleJekyllSearch({
-            searchInput: document.getElementById('search-input'),
-            resultsContainer: document.getElementById('results-container'),
-            json: '{{ site.url }}/search.json',
-            searchResultTemplate: '<article><h3>{titel}</h3><h6>Geschreven door <a href="{auteur_link}">{auteur}</a> op {datum}</h6><div class="desc">{content}</div><a class="leesmeer" href="{url}">Lees meer<i class="angle right icon"></i></a></article><div class="ui divider"></div>',
-            noResultsText: '<h2>Geen resultaten gevonden</h2>',
-            limit: 10,
-            fuzzy: false
-        })
-    </script>
-    <script type="text/javascript">
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-97131551-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-</body>
+         </div>
+      </div>
+      <ul id="results-container"></ul>
+      {{ content }}
+      <div class="ui inverted vertical footer segment">
+         <div class="ui center aligned container footer">
+            <img alt="" src="{{ site.url }}/img/hageveld-footer.png" class="ui centered image desktop">
+            <img alt="" src="{{ site.url }}/img/hageveld-footer-mobile.png" class="ui centered image mobile">
+         </div>
+      </div>
+      <script type="text/javascript">
+         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+         ga('create', 'UA-97131551-1', 'auto');
+         ga('send', 'pageview');
+         
+         SimpleJekyllSearch({
+         searchInput: document.getElementById('search-input'),
+         resultsContainer: document.getElementById('results-container'),
+         json: '{{ site.url }}/search.json',
+         searchResultTemplate: '<article><h3>{titel}</h3><h6>Geschreven door <a href="{auteur_link}">{auteur}</a> op {datum}</h6><div class="desc">{content}</div><a class="leesmeer" href="{url}">Lees meer<i class="angle right icon"></i></a></article><div class="ui divider"></div>',
+         noResultsText: '<h2>Geen resultaten gevonden</h2>',
+         limit: 10,
+         fuzzy: false
+         })
+      </script>
+      </div>
+   </body>
 </html>

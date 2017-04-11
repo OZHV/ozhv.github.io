@@ -27,11 +27,14 @@ $(document).ready(function() {
     }
     if ($(".ui.main.text.container.home").length) {
         $(".ui.icon.input").show();
+    } else {
+        $(".right.menu").remove();
     }
-	else {
-		$(".right.menu").remove();
-	}
-	if($(".desktop").css("display") == "none") {
-		$(".right.menu").remove();
-	}
+    if ($(".desktop").css("display") == "none") {
+        $(".right.menu").remove();
+        $(".header.item").on("click", function(e) {
+            e.preventDefault();
+        });
+    }
+    $('.ui.dropdown').dropdown();
 });

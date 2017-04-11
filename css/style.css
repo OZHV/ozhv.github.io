@@ -21,10 +21,15 @@ ul.ui.list {
 article.post {
     margin-top: -25px;
 }
-.item:before, .ui.vertical.inverted.menu.item:before {
+.item:before,
+.ui.vertical.inverted.menu.item:before {
     background: transparent !important;
 }
-.archief,.agenda {
+body.pushable {
+    background: transparent !important;
+}
+.archief,
+.agenda {
     margin-bottom: 30px;
 }
 .ui.icon.input {
@@ -39,7 +44,9 @@ article.post {
 .ui.menu .item img.logo {
     margin-right: 1.5em;
 }
-.verzonden,.taglist,#results-container {
+.verzonden,
+.taglist,
+#results-container {
     display: none;
 }
 .success {
@@ -60,7 +67,8 @@ article.post {
     padding-bottom: 0;
     padding-top: 2em;
 }
-.ui.inverted.segment,.ui.inverted.menu {
+.ui.inverted.segment,
+.ui.inverted.menu {
     background: #FA9B3D;
 }
 .ui.main {
@@ -79,32 +87,55 @@ article.post {
 .ui.main.text.container.post {
     margin-top: -2em;
 }
-
 /* CSS voor mobiele gebruikers */
 
-.ui.centered.image.mobile,.mobile {
+.ui.centered.image.mobile,
+.mobile {
     display: none;
 }
-.ui.centered.image.desktop,.desktop {
+.ui.centered.image.desktop,
+.desktop {
     display: flex;
 }
 @media (max-width: 500px) {
-    .ui.centered.image.mobile,.mobile {
+    .ui.centered.image.mobile,
+    .mobile {
         display: block;
     }
-    .ui.centered.image.desktop,.desktop {
+    .ui.centered.image.desktop,
+    .desktop {
         display: none;
     }
     .header.item {
         margin: 0 auto !important;
+        left: -30px;
+    }
+    .ui.menu {
+        height: 30px;
+    }
+    .logo {
+        margin-bottom: -9px !important;
     }
     .main.text.container {
-        padding-top: 5.5em;
+        padding-top: 3.5em;
     }
     .main.container.text.container.post {
-        padding-top: 7em;
+        padding-top: 5.5em;
     }
     .mobile.socialmedia {
         margin-bottom: -10px;
+    }
+    .ui.footer.segment {
+        margin: 1em 0em 0em;
+        margin-top: 30px;
+        padding-bottom: 0;
+        padding-top: 1em;
+    }
+    .archief,
+    .agenda {
+        margin-bottom: 10px;
+    }
+    ul.ui.list {
+        margin-left: 35px;
     }
 }
