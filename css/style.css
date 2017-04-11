@@ -21,6 +21,9 @@ ul.ui.list {
 article.post {
     margin-top: -25px;
 }
+.item:before, .ui.vertical.inverted.menu.item:before {
+    background: transparent !important;
+}
 .archief,.agenda {
     margin-bottom: 30px;
 }
@@ -100,5 +103,8 @@ article.post {
     }
     .main.container.text.container.post {
         padding-top: 7em;
+    }
+    .mobile.socialmedia {
+        margin-bottom: -10px;
     }
 }
