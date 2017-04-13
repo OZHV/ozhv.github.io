@@ -1,6 +1,7 @@
 ---
 ---
 $(document).ready(function() {
+	InstantClick.init();
     var globalhtml = $(".ui.main.text.container").html();
     $("#search-input").on("input", function() {
         if ($("#search-input").val() != "" && $("#search-input").val().length > 1) {
