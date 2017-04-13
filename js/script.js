@@ -1,7 +1,12 @@
 ---
 ---
 $(document).ready(function() {
-	InstantClick.init();
+    InstantClick.init();
+    InstantClick.on('change', function() {
+        $.get("{{ site.url }}/js/script.js", function( data ) {
+            eval(data);
+        });
+    });
     var globalhtml = $(".ui.main.text.container").html();
     $("#search-input").on("input", function() {
         if ($("#search-input").val() != "" && $("#search-input").val().length > 1) {

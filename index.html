@@ -18,12 +18,14 @@ title: Op z'n Hagevelds
 
 <!-- Pagination links -->
 <div class="pagination">
+<div class="ui horizontal small divided link list">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous"><i class="angle left icon"></i>Vorige</a> |
+    <a href="{{ paginator.previous_page_path }}" class="previous item"><i class="angle left icon"></i>Vorige</a>
   {% endif %}
-  <span class="page_number ">Pagina: {{ paginator.page }}/{{ paginator.total_pages }}</span>
+  <span class="page_number item">Pagina: {{ paginator.page }}/{{ paginator.total_pages }}</span>
   {% if paginator.next_page %}
-    | <a href="{{ paginator.next_page_path }}" class="next">Volgende<i class="angle right icon"></i></a>
+    <a href="{{ paginator.next_page_path }}" class="next item">Volgende<i class="angle right icon"></i></a>
   {% endif %}
+</div>
 </div>
 </div>
