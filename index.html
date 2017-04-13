@@ -3,7 +3,7 @@ layout: default
 title: Op z'n Hagevelds
 ---
 <div class="ui main text container home" itemscope="" itemtype="http://schema.org/WebSite">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
     <article itemscope="" itemtype="http://schema.org/Article">
         <h3 itemprop="name">{{ post.titel }}</h3>
         <h6>Geschreven door <a href=" {{ post.auteur_link }}">{{ post.auteur }}</a> op {% assign m = post.datum | date: "%-m" %}{{ post.datum | date: "%-d " }}{% case m %}{% when '1' %}januari{% when '2' %}februari{% when '3' %}maart{% when '4' %}april{% when '5' %}mei{% when '6' %}juni{% when '7' %}juli{% when '8' %}augustus{% when '9' %}september{% when '10' %}oktober{% when '11' %}november{% when '12' %}december{% endcase %}{{ post.datum | date: " %Y" }}</h6>
@@ -15,4 +15,15 @@ title: Op z'n Hagevelds
     </article>
     <div class="ui divider"></div>
     {% endfor %}
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous"><i class="angle left icon"></i>Vorige</a> |
+  {% endif %}
+  <span class="page_number ">Pagina: {{ paginator.page }}/{{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    | <a href="{{ paginator.next_page_path }}" class="next">Volgende<i class="angle right icon"></i></a>
+  {% endif %}
+</div>
 </div>

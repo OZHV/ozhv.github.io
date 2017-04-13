@@ -88,15 +88,15 @@
             return;
         }
 
-        clone.subtract('days', dayOfWeek + 1);
+        clone.subtract(dayOfWeek + 1, 'days');
 
         for (var i = dayOfWeek; i > 0; i--) {
-            this.drawDay(clone.add('days', 1));
+            this.drawDay(clone.add(1, 'days'));
         }
     }
 
     Calendar.prototype.fowardFill = function() {
-        var clone = this.current.clone().add('months', 1).subtract('days', 1);
+        var clone = this.current.clone().add(1, 'months').subtract(1, 'days');
         var dayOfWeek = clone.day();
 
         if (dayOfWeek === 6) {
@@ -104,7 +104,7 @@
         }
 
         for (var i = dayOfWeek; i < 6; i++) {
-            this.drawDay(clone.add('days', 1));
+            this.drawDay(clone.add(1, 'days'));
         }
     }
 
@@ -113,7 +113,7 @@
 
         while (clone.month() === this.current.month()) {
             this.drawDay(clone);
-            clone.add('days', 1);
+            clone.add(1, 'days');
         }
     }
 
@@ -295,13 +295,13 @@
     }
 
     Calendar.prototype.nextMonth = function() {
-        this.current.add('months', 1);
+        this.current.add(1, 'months');
         this.next = true;
         this.draw();
     }
 
     Calendar.prototype.prevMonth = function() {
-        this.current.subtract('months', 1);
+        this.current.subtract(1, 'months');
         this.next = false;
         this.draw();
     }

@@ -3,11 +3,14 @@
 title: Op z'n Hagevelds
 markdown: kramdown
 permalink: /:title
+paginate_path: "/p:num/"
 theme: minima
 safe: true
+paginate: 4
 timezone: Europe/Amsterdam
 gems:
   - jekyll-feed
+  - jekyll-paginate
 exclude:
   - Gemfile
   - Gemfile.lock
