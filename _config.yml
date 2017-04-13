@@ -3,7 +3,7 @@
 title: Op z'n Hagevelds
 markdown: kramdown
 permalink: /:title
-paginate_path: "/p:num/"
+paginate_path: "/pagina/:num/"
 theme: minima
 safe: true
 paginate: 4
