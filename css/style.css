@@ -44,6 +44,9 @@ body.pushable {
 .ui.menu .item img.logo {
     margin-right: 1.5em;
 }
+.ui.divided.horizontal.list>.item {
+    border-left: 1px solid rgba(0, 0, 0, .25);
+}
 .verzonden,
 .taglist,
 #results-container {
@@ -86,7 +89,7 @@ body.pushable {
 }
 .ui.main.text.container.post {
     margin-top: -2em;
-	padding-top: 7em;
+    padding-top: 7em;
 }
 /* CSS voor mobiele gebruikers */
 

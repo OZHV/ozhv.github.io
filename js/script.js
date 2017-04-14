@@ -1,12 +1,6 @@
 ---
 ---
 $(document).ready(function() {
-    InstantClick.init();
-    InstantClick.on('change', function() {
-        $.get("{{ site.url }}/js/script.js", function( data ) {
-            eval(data);
-        });
-    });
     var globalhtml = $(".ui.main.text.container").html();
     $("#search-input").on("input", function() {
         if ($("#search-input").val() != "" && $("#search-input").val().length > 1) {
@@ -27,7 +21,7 @@ $(document).ready(function() {
     if ($(".ui.main.text.container.post").length) {
         if (document.referrer.includes('archief')) {
             $(".terug").attr("href", document.referrer);
-        } else if (!document.referrer.includes('{{ site.url }}')) {
+        } else if (!document.referrer.includes('{{ site.url }}') && typeof terug === 'undefined') {
             $(".terug").html('<i class="arrow left icon"></i>Alle artikelen');
         }
     }
@@ -42,5 +36,7 @@ $(document).ready(function() {
             e.preventDefault();
         });
     }
-    $('.ui.dropdown').dropdown();
+    if($(".ui.dropdown").length) {
+        $('.ui.dropdown').dropdown();
+    }
 });
