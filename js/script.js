@@ -36,7 +36,30 @@ $(document).ready(function() {
             e.preventDefault();
         });
     }
-    if($(".ui.dropdown").length) {
+    if ($(".ui.dropdown").length) {
         $('.ui.dropdown').dropdown();
     }
 });
+(function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+ga('create', 'UA-97131551-1', 'auto');
+ga('send', 'pageview');
+
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '{{ site.url }}/search.json',
+    searchResultTemplate: '<article><h3>{titel}</h3><h6>Geschreven door <a href="{auteur_link}">{auteur}</a> op {datum}</h6><div class="desc">{content}</div><a class="leesmeer" href="{url}">Lees meer<i class="angle right icon"></i></a></article><div class="ui divider"></div>',
+    noResultsText: '<h2>Geen resultaten gevonden</h2>',
+    limit: 10,
+    fuzzy: false
+})
