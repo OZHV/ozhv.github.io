@@ -1,5 +1,8 @@
 ---
 ---
+var host = '{{site.enforce_ssl}}';
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
 $(document).ready(function() {
     var globalhtml = $(".ui.main.text.container").html();
     $("#search-input").on("input", function() {
@@ -58,7 +61,7 @@ SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
     json: '{{ site.url }}/search.json',
-    searchResultTemplate: '<article><h3>{titel}</h3><h6>Geschreven door <a href="{auteur_link}">{auteur}</a> op {datum}</h6><div class="desc">{content}</div><a class="leesmeer" href="{url}">Lees meer<i class="angle right icon"></i></a></article><div class="ui divider"></div>',
+    searchResultTemplate: '<article><h3>{titel}</h3><h6>Geschreven door <a href="{auteur_link}">{auteur}</a> op {datum}</h6><div class="desc"><p>{content}</p></div><a class="leesmeer" href="{url}">Lees meer<i class="angle right icon"></i></a></article><div class="ui divider"></div>',
     noResultsText: '<h2>Geen resultaten gevonden</h2>',
     limit: 10,
     fuzzy: false

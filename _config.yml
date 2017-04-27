@@ -1,8 +1,12 @@
 # Jekyll Config File
 
 title: Op z'n Hagevelds
+description: Op z'n Hagevelds
+sitetags: hageveld, op zn hagevelds, op z'n hagevelds, krant, tijdschrift, artikel, heemstede, school, 200 jaar hageveld, 200, jaar, vwo, atheneum, college
 markdown: kramdown
 permalink: /:title
+url: https://opznhagevelds.nl
+enforce_ssl: opznhagevelds.nl
 paginate_path: "/pagina/:num/"
 theme: minima
 safe: true

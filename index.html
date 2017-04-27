@@ -3,19 +3,29 @@ layout: default
 title: Op z'n Hagevelds
 ---
 <div class="ui main text container home" itemscope="" itemtype="http://schema.org/WebSite">
+   <meta property="og:url" content="{{ site.url }}">
+   <meta property="og:site_name" content="{{ site.title }}">
+   <meta property="og:title" content="{{ site.title }}">
+   <meta property="og:locale" content="nl_NL">
+   <meta property="og:description" content="{{ site.description }}">
+   <meta property="og:image" content="{{ site.url }}/img/favicon.png">
+   <meta name="twitter:card" content="summary">
+   <meta name="twitter:site" content="{{ site.title }}">
+   <meta name="twitter:title" content="{{ site.title }}">
+   <meta name="twitter:description" content="{{ site.description }}">
+   <meta name="twitter:image" content="{{ site.url }}/img/favicon.png">
    {% for post in paginator.posts %}
    <article itemscope="" itemtype="http://schema.org/Article">
       <h3 itemprop="name">{{ post.titel }}</h3>
-      <h6>Geschreven door <a href=" {{ post.auteur_link }}">{{ post.auteur }}</a> op {% assign m = post.datum | date: "%-m" %}{{ post.datum | date: "%-d " }}{% case m %}{% when '1' %}januari{% when '2' %}februari{% when '3' %}maart{% when '4' %}april{% when '5' %}mei{% when '6' %}juni{% when '7' %}juli{% when '8' %}augustus{% when '9' %}september{% when '10' %}oktober{% when '11' %}november{% when '12' %}december{% endcase %}{{ post.datum | date: " %Y" }}</h6>
+      <h6>Geschreven door <a href="{{ post.auteur_link }}">{{ post.auteur }}</a> op {% assign m = post.datum | date: "%-m" %}{{ post.datum | date: "%-d " }}{% case m %}{% when '1' %}januari{% when '2' %}februari{% when '3' %}maart{% when '4' %}april{% when '5' %}mei{% when '6' %}juni{% when '7' %}juli{% when '8' %}augustus{% when '9' %}september{% when '10' %}oktober{% when '11' %}november{% when '12' %}december{% endcase %}{{ post.datum | date: " %Y" }}</h6>
       <meta itemprop="keywords" content="{{ page.tags }}" />
       <div class="desc" itemprop="description">
-         {{ post.content | split: '[Lees Meer]' | first | markdownify | smartify }}
+         {{ post.content | split: '[Lees Meer]' | first | markdownify | strip_html | strip_newlines }}
       </div>
       <a class="leesmeer" itemprop="url" href="{{ post.url }}">Lees meer<i class="angle right icon"></i></a>
    </article>
    <div class="ui divider"></div>
    {% endfor %}
-   <!-- Pagination links -->
    <div class="pagination">
       <div class="ui horizontal divided list">
          {% if paginator.previous_page %}
