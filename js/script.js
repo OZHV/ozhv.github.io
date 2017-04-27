@@ -1,5 +1,8 @@
 ---
 ---
+var host = '{{site.enforce_ssl}}';
+if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
 $(document).ready(function() {
     var globalhtml = $(".ui.main.text.container").html();
     $("#search-input").on("input", function() {
